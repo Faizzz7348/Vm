@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚛 Vehicle Management System</h1>
+            <p>Track and manage your fleet of lorries</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel - Vehicle Table -->
+            <div class="vehicle-panel">
+                <h2>Vehicle Fleet</h2>
+                <div class="controls">
+                    <button type="button" id="addVehicle" class="btn btn-primary">Add Lorry</button>
+                    <button type="button" id="autoGenerateKm" class="btn btn-success">Auto-Generate Kilometers</button>
+                </div>
+                <div class="table-container">
+                    <table id="vehicleTable">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Vehicle ID</th>
+                                <th>Type</th>
+                                <th>License Plate</th>
+                                <th>Kilometers</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vehicleTableBody">
+                            <!-- Vehicles will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Panel - Mini Map -->
+            <div class="map-panel">
+                <h2>Vehicle Location Map</h2>
+                <div id="miniMap" class="mini-map">
+                    <div class="road road-1"></div>
+                    <div class="road road-2"></div>
+                    <div class="road road-3"></div>
+                    <!-- Vehicle markers will be dynamically added here -->
+                </div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-icon active"></span> Active
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon inactive"></span> Inactive
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon maintenance"></span> Maintenance
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Panel -->
+        <div class="stats-panel">
+            <div class="stat-card">
+                <h3>Total Vehicles</h3>
+                <p id="totalVehicles" class="stat-value">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Vehicles</h3>
+                <p id="activeVehicles" class="stat-value">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Kilometers</h3>
+                <p id="totalKilometers" class="stat-value">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Avg Km/Vehicle</h3>
+                <p id="avgKilometers" class="stat-value">0</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
